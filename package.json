@@ -1,0 +1,59 @@
+{
+    "name": "@pedroapy/base-config",
+    "version": "0.0.0-development",
+    "description": "This is my basic configurations for development.",
+    "keywords": [
+        "eslint",
+        "eslint-config"
+    ],
+    "author": "@pedroapy",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pedroapy/base-config.git"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "*.js",
+        ".json"
+    ],
+    "release": {
+        "branches": [
+            "main"
+        ]
+    },
+    "exports": {
+        "./prettier": "./.prettierrc.json",
+        "./eslint-web-react": "./eslint-web-react.js",
+        "./eslint-node": "./eslint-node.js",
+        "./tsconfig.node.json": "./tsconfig.node.json",
+        "./tsconfig.react.json": "./tsconfig.react.json"
+    },
+    "peerDependencies": {
+        "eslint": "^8.0.0",
+        "typescript": "^4.0.0"
+    },
+    "dependencies": {
+        "@typescript-eslint/eslint-plugin": "6.2.0",
+        "@typescript-eslint/parser": "6.2.0",
+        "eslint-config-prettier": "8.9.0",
+        "eslint-plugin-import": "2.28.0",
+        "eslint-plugin-jsx-a11y": "6.7.1",
+        "eslint-plugin-react": "7.33.0",
+        "eslint-plugin-react-hooks": "4.6.0",
+        "eslint-plugin-testing-library": "5.11.0",
+        "eslint-plugin-vitest": "0.2.8"
+    },
+    "devDependencies": {
+        "eslint": "8.45.0",
+        "prettier": "3.0.0",
+        "react": "18.2.0",
+        "typescript": "5.1.6",
+        "semantic-release": "21.0.7"
+    },
+    "scripts": {
+        "semantic-release": "semantic-release"
+    }
+}
