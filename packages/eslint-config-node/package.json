@@ -1,0 +1,30 @@
+{
+    "name": "@pedroapy/eslint-config-node",
+    "version": "1.0.0",
+    "description": "The @pedroapy shared config for ESLint for node",
+    "main": "index.js",
+    "keywords": [
+        "eslint",
+        "eslint-config",
+        "node"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pedroapy/base-config.git"
+    },
+    "author": "@pedroapy",
+    "license": "MIT",
+    "publishConfig": {
+        "access": "public"
+    },
+    "peerDependencies": {
+        "eslint": "^8.0.0",
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "@typescript-eslint/eslint-plugin": "6.2.0",
+        "@typescript-eslint/parser": "6.2.0",
+        "eslint-config-prettier": "8.9.0",
+        "eslint-plugin-vitest": "0.2.8"
+    }
+}

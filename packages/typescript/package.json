@@ -1,0 +1,20 @@
+{
+    "name": "@pedroapy/typescript-web-react",
+    "version": "1.0.0",
+    "description": "The @pedroapy shared typescript config for react web",
+    "keywords": [
+        "typescript"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pedroapy/base-config.git"
+    },
+    "author": "@pedroapy",
+    "license": "MIT",
+    "publishConfig": {
+        "access": "public"
+    },
+    "peerDependencies": {
+        "typescript": "^5.0.0"
+    }
+}

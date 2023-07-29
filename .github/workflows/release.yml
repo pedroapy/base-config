@@ -8,7 +8,7 @@ on:
             - '*'
 
 jobs:
-    release:
+    build:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
@@ -19,16 +19,19 @@ jobs:
                   node-version: 20
                   cache: 'yarn'
 
-            - name: Install dependencies
-              run: yarn install --frozen-lockfile
+            - name: Git Identity
+              run: |
+                git config user.name "${{ github.actor }}"
+                git config user.email "${{ github.actor}}@users.noreply.github.com"
+                git remote set-url origin https://$GIT_AUTHOR_NAME:$GITHUB_TOKEN@github.com/pedroapy/base-config
 
-            - name: Set write npm token
+            - name: Add npm token
               run: |
                   npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
 
+            - name: Install dependencies
+              run: yarn install --frozen-lockfile
+
             - name: Release
               if: github.ref == 'refs/heads/main'
-              run: yarn semantic-release
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+              run: yarn release
