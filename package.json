@@ -21,7 +21,7 @@
         "release": "lerna publish --yes"
     },
     "dependencies": {
-        "@pedroapy/prettier": "^0.0.0-development",
+        "@pedroapy/prettier": "^1.1.0",
         "eslint": "8.46.0",
         "lerna": "7.1.4",
         "prettier": "3.0.0",
