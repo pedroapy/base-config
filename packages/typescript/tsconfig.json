@@ -1,0 +1,5 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "PedroAPY TypeScript Config",
+    "extends": "./tsconfig.base.json"
+}

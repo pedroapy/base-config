@@ -1,0 +1,22 @@
+{
+    "name": "@pedroapy/prettier",
+    "description": "pedroapy prettier shared config",
+    "version": "0.0.0-development",
+    "main": "prettier.json",
+    "author": "@pedroapy",
+    "license": "MIT",
+    "keywords": [
+        "prettier",
+        "prettier-config"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pedroapy/base-config.git"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {
+        "prettier": "^3.0.0"
+    }
+}

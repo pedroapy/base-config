@@ -1,0 +1,20 @@
+{
+    "name": "@pedroapy/typescript",
+    "version": "1.0.0",
+    "description": "The @pedroapy shared typescript config",
+    "keywords": [
+        "typescript"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pedroapy/base-config.git"
+    },
+    "author": "@pedroapy",
+    "license": "MIT",
+    "publishConfig": {
+        "access": "public"
+    },
+    "peerDependencies": {
+        "typescript": "^5.0.0"
+    }
+}

@@ -1,0 +1,1 @@
+# PedroAPY Prettier config
