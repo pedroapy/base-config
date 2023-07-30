@@ -43,9 +43,6 @@ module.exports = {
             files: ['**/__tests__/**/*', '**/*.{spec,test}.*'],
             plugins: ['vitest'],
             extends: ['plugin:vitest/recommended', 'plugin:testing-library/react'],
-            env: {
-                'jest/globals': true,
-            },
         },
     ],
 };
