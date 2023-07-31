@@ -1,6 +1,6 @@
 {
     "name": "@pedroapy/eslint-config-node",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "description": "The @pedroapy shared config for ESLint for node",
     "main": "index.js",
     "keywords": [
