@@ -71,7 +71,6 @@ export function getViteBaseConf({
             coverage: {
                 reportsDirectory: '.reports/coverage',
             },
-            reporters: ['text', 'html'],
         },
     };
 }
