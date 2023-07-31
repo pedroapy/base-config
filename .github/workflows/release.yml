@@ -21,9 +21,9 @@ jobs:
 
             - name: Git Identity
               run: |
-                git config user.name "${{ github.actor }}"
-                git config user.email "${{ github.actor}}@users.noreply.github.com"
-                git remote set-url origin https://$GIT_AUTHOR_NAME:$GITHUB_TOKEN@github.com/pedroapy/base-config
+                  git config user.name "${{ github.actor }}"
+                  git config user.email "${{ github.actor}}@users.noreply.github.com"
+                  git remote set-url origin https://$GIT_AUTHOR_NAME:$GITHUB_TOKEN@github.com/pedroapy/base-config
 
             - name: Add npm token
               run: |
@@ -31,6 +31,9 @@ jobs:
 
             - name: Install dependencies
               run: yarn install --frozen-lockfile
+
+            - name: Build
+              run: yarn build
 
             - name: Release
               if: github.ref == 'refs/heads/main'

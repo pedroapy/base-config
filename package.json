@@ -18,7 +18,8 @@
     },
     "prettier": "@pedroapy/prettier",
     "scripts": {
-        "release": "lerna publish --yes"
+        "release": "lerna publish --yes",
+        "build": "lerna run build"
     },
     "dependencies": {
         "@pedroapy/prettier": "^1.1.0",
@@ -28,5 +29,8 @@
         "react": "18.2.0",
         "typescript": "5.1.6",
         "vitest": "0.33.0"
+    },
+    "devDependencies": {
+        "tsup": "7.1.0"
     }
 }
