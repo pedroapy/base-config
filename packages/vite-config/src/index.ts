@@ -3,6 +3,7 @@ import { type UserConfig } from 'vitest/dist/config';
 
 import react from '@vitejs/plugin-react';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import { existsSync } from 'node:fs';
 
 export type PackageJSON = {
     name: string;
@@ -17,6 +18,7 @@ export type ViteBaseConfigurationOpts = {
     packageJSON: PackageJSON;
     setupFiles?: string[];
     externals?: string[];
+    entry?: string;
 };
 
 function getFileName(packageJSON: PackageJSON, module: ModuleFormat): string {
@@ -38,14 +40,18 @@ export function getViteBaseConf({
     packageJSON,
     setupFiles = [],
     externals = [],
+    entry: entryUser,
 }: ViteBaseConfigurationOpts): UserConfig {
+    const existsIndexTSX = existsSync('src/index.tsx');
+
+    const entry = entryUser ?? existsIndexTSX ? 'src/index.tsx' : 'src/index.ts';
     return {
         plugins: [tsconfigPaths(), react({ include: /\.(mdx|js|jsx|ts|tsx)$/, jsxRuntime: 'automatic' })].filter(
             Boolean,
         ),
         build: {
             lib: {
-                entry: 'src/index.ts',
+                entry,
                 name: packageJSON.name,
                 fileName: (format) => getFileName(packageJSON, format),
                 formats: ['es', 'cjs'],
