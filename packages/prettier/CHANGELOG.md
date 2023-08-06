@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.3.0 (2023-08-06)
+
+
+### Features
+
+* allow user entry ([6389040](https://github.com/pedroapy/base-config/commit/638904019a50cdcf6039ef15b1adfed3608f08c2))
+
+
+
+
+
 ## 1.2.2 (2023-07-31)
 
 **Note:** Version bump only for package @pedroapy/prettier
