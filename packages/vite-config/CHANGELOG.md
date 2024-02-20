@@ -3,39 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# 1.3.0 (2023-08-06)
-
+# 1.4.0 (2024-02-20)
 
 ### Features
 
-* allow user entry ([6389040](https://github.com/pedroapy/base-config/commit/638904019a50cdcf6039ef15b1adfed3608f08c2))
+-   update versions ([ad0e148](https://github.com/pedroapy/base-config/commit/ad0e1487c6d5732188cef003b88d990970e686fd))
 
+# 1.3.0 (2023-08-06)
 
+### Features
 
-
+-   allow user entry ([6389040](https://github.com/pedroapy/base-config/commit/638904019a50cdcf6039ef15b1adfed3608f08c2))
 
 ## 1.2.2 (2023-07-31)
 
 **Note:** Version bump only for package @pedroapy/vite-config
 
-
-
-
-
 ## 1.2.1 (2023-07-31)
-
 
 ### Bug Fixes
 
-* vite reporters ([5f0b658](https://github.com/pedroapy/base-config/commit/5f0b658c968cc39df86103802d355cb31c29aa06))
-
-
-
-
+-   vite reporters ([5f0b658](https://github.com/pedroapy/base-config/commit/5f0b658c968cc39df86103802d355cb31c29aa06))
 
 # 1.2.0 (2023-07-31)
 
-
 ### Features
 
-* shared vite config ([5fccf20](https://github.com/pedroapy/base-config/commit/5fccf204cd78d73c49ab82ec11cdf42ae072a924))
+-   shared vite config ([5fccf20](https://github.com/pedroapy/base-config/commit/5fccf204cd78d73c49ab82ec11cdf42ae072a924))
