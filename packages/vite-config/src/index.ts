@@ -35,13 +35,9 @@ function getFileName(packageJSON: PackageJSON, module: ModuleFormat): string {
     }
 }
 
-export function getViteBaseConf({
-    globals = {},
-    packageJSON,
-    setupFiles = [],
-    externals = [],
-    entry: entryUser,
-}: ViteBaseConfigurationOpts): UserConfig {
+export function getViteBaseConf(
+    { globals = {}, packageJSON, setupFiles = [], externals = [], entry: entryUser }: ViteBaseConfigurationOpts,
+): UserConfig {
     const existsIndexTSX = existsSync('src/index.tsx');
 
     const entry = entryUser ?? existsIndexTSX ? 'src/index.tsx' : 'src/index.ts';
@@ -73,7 +69,8 @@ export function getViteBaseConf({
             setupFiles,
             css: true,
             clearMocks: true,
-            singleThread: process.env.CI === 'true',
+            bail: process.env.CI === 'true' ? 1 : undefined,
+            maxConcurrency: process.env.CI === 'true' ? 1 : undefined,
             coverage: {
                 reportsDirectory: '.reports/coverage',
             },

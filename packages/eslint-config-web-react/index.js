@@ -1,22 +1,26 @@
 'use strict';
 
+const restrictedGlobals = require('confusing-browser-globals');
+
 module.exports = {
     root: true,
     extends: [
         'eslint:recommended',
-        'plugin:@typescript-eslint/strict',
-        'plugin:@typescript-eslint/stylistic',
-        'plugin:jsx-a11y/recommended',
+        'standard-with-typescript',
         'plugin:react/recommended',
         'plugin:react/jsx-runtime',
         'plugin:react-hooks/recommended',
-        'prettier',
+        'plugin:import/recommended',
+        'plugin:jsx-a11y/recommended',
+        'plugin:eslint-comments/recommended',
+        'plugin:prettier/recommended',
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         project: true,
-        ecmaVersion: 2018,
+        ecmaVersion: 'latest',
         sourceType: 'module',
+        project: './tsconfig.json',
         ecmaFeatures: {
             jsx: true,
         },
@@ -24,7 +28,7 @@ module.exports = {
         // typescript-eslint specific options
         warnOnUnsupportedTypeScriptVersion: true,
     },
-    plugins: ['@typescript-eslint', 'react', 'import', 'jsx-a11y', 'react-hooks'],
+    plugins: ['react', 'simple-import-sort', 'import', 'promise', 'react-hooks', 'jsx-a11y', 'prettier'],
     env: {
         browser: true,
         commonjs: true,
@@ -40,9 +44,63 @@ module.exports = {
     },
     overrides: [
         {
-            files: ['**/__tests__/**/*', '**/*.{spec,test}.*'],
-            plugins: ['vitest'],
+            files: ['*.js'],
+            extends: ['eslint:recommended', 'plugin:eslint-comments/recommended', 'plugin:prettier/recommended'],
+            env: {
+                node: true,
+            },
+            parser: 'esprima',
+            parserOptions: {
+                sourceType: 'script',
+            },
+        },
+        {
+            files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
             extends: ['plugin:vitest/recommended', 'plugin:testing-library/react'],
+            plugins: ['vitest', 'testing-library'],
+            rules: {},
         },
     ],
+    rules: {
+        '@typescript-eslint/no-unused-vars': [
+            'error',
+            {
+                argsIgnorePattern: '^_',
+                varsIgnorePattern: '^_',
+                caughtErrorsIgnorePattern: '^_',
+                ignoreRestSiblings: true,
+            },
+        ],
+
+        'simple-import-sort/imports': [
+            'error',
+            {
+                groups: [
+                    // Side effect imports.
+                    ['^\\u0000'],
+
+                    // Packages. `react` related packages come first.
+                    ['^react', '^@?\\w'],
+
+                    // Internal packages.
+                    ['^~'],
+
+                    // Parent imports. Put `..` last.
+                    ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+
+                    // Other relative imports. Put same-folder imports and `.` last.
+                    ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+
+                    // Style imports.
+                    ['^.+\\.s?css$'],
+                ],
+            },
+        ],
+        'simple-import-sort/exports': 'error',
+        'import/first': 'error',
+        'import/newline-after-import': 'error',
+        'eslint-comments/no-unused-disable': 'error',
+        'no-restricted-globals': ['error'].concat(restrictedGlobals),
+        'import/no-cycle': 'warn',
+    },
 };
