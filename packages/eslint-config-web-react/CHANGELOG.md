@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.5.0 (2024-03-01)
+
+### Features
+
+-   add import order eslint to node projects ([7645122](https://github.com/pedroapy/base-config/commit/764512262f6704510842feffaa260bbaabb27f82))
+
 # 1.4.0 (2024-02-20)
 
 ### Features
