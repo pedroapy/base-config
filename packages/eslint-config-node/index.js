@@ -2,7 +2,7 @@
 
 module.exports = {
     root: true,
-    extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
+    extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended','plugin:import/recommended', 'prettier'],
     parser: '@typescript-eslint/parser',
     plugins: ['import'],
     env: {
@@ -10,7 +10,9 @@ module.exports = {
     },
     parserOptions: {
         project: true,
-        ecmaVersion: 2022,
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        project: './tsconfig.json',
         warnOnUnsupportedTypeScriptVersion: true,
     },
     overrides: [
@@ -20,4 +22,42 @@ module.exports = {
             extends: ['plugin:vitest/recommended', 'plugin:testing-library/react'],
         },
     ],
+    rules: {
+        '@typescript-eslint/no-unused-vars': [
+            'error',
+            {
+                argsIgnorePattern: '^_',
+                varsIgnorePattern: '^_',
+                caughtErrorsIgnorePattern: '^_',
+                ignoreRestSiblings: true,
+            },
+        ],
+        'simple-import-sort/imports': [
+            'error',
+            {
+                groups: [
+                    // Side effect imports.
+                    ['^\\u0000'],
+
+                    // Packages. `react` related packages come first.
+                    ['^react', '^@?\\w'],
+
+                    // Internal packages.
+                    ['^~'],
+
+                    // Parent imports. Put `..` last.
+                    ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+
+                    // Other relative imports. Put same-folder imports and `.` last.
+                    ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+
+                    // Style imports.
+                    ['^.+\\.s?css$'],
+                ],
+            },
+        ],
+        'simple-import-sort/exports': 'error',
+        'eslint-comments/no-unused-disable': 'error',
+        'import/no-cycle': 'warn',
+    }
 };
