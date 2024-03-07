@@ -1,8 +1,14 @@
 'use strict';
 
+/**
+ * @see https://github.com/eslint/eslint/issues/3458
+ * @see https://www.npmjs.com/package/@rushstack/eslint-patch
+ */
+require('@rushstack/eslint-patch/modern-module-resolution');
+
 module.exports = {
     root: true,
-    extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended','plugin:import/recommended', 'prettier'],
+    extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:import/recommended', 'prettier'],
     parser: '@typescript-eslint/parser',
     plugins: ['import'],
     env: {
@@ -59,5 +65,5 @@ module.exports = {
         'simple-import-sort/exports': 'error',
         'eslint-comments/no-unused-disable': 'error',
         'import/no-cycle': 'warn',
-    }
+    },
 };
