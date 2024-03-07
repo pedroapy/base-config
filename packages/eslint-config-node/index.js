@@ -46,7 +46,7 @@ module.exports = {
                     ['^\\u0000'],
 
                     // Packages. `react` related packages come first.
-                    ['^react', '^@?\\w'],
+                    ['^@?\\w'],
 
                     // Internal packages.
                     ['^~'],
