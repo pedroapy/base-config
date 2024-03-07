@@ -1,0 +1,1 @@
+# PedroAPY ESLint config base

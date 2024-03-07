@@ -1,12 +1,12 @@
 {
-    "name": "@pedroapy/eslint-config-web-react",
+    "name": "@pedroapy/eslint-config-base",
     "version": "1.5.3",
-    "description": "The @pedroapy shared config for ESLint for react web",
+    "description": "The @pedroapy base shared config for ESLint",
     "main": "index.js",
     "keywords": [
         "eslint",
         "eslint-config",
-        "react"
+        "node"
     ],
     "repository": {
         "type": "git",
@@ -19,19 +19,21 @@
     },
     "peerDependencies": {
         "eslint": "^8.0.0",
-        "react": "^17.0.0 || ^18.0.0",
         "typescript": "^5.0.0"
     },
     "dependencies": {
         "@rushstack/eslint-patch": "1.7.2",
-        "confusing-browser-globals": "1.0.11",
+        "@typescript-eslint/eslint-plugin": "7.1.1",
+        "@typescript-eslint/parser": "7.1.1",
         "eslint-config-prettier": "9.1.0",
-        "eslint-plugin-jsx-a11y": "6.8.0",
+        "eslint-config-standard-with-typescript": "43.0.1",
+        "eslint-import-resolver-typescript": "3.6.1",
+        "eslint-plugin-eslint-comments": "3.2.0",
+        "eslint-plugin-import": "2.29.1",
+        "eslint-plugin-n": "16.6.2",
         "eslint-plugin-prettier": "5.1.3",
-        "eslint-plugin-react": "7.34.0",
-        "eslint-plugin-react-hooks": "4.6.0",
-        "eslint-plugin-react-refresh": "0.4.5",
-        "eslint-plugin-testing-library": "6.2.0",
+        "eslint-plugin-promise": "6.1.1",
+        "eslint-plugin-simple-import-sort": "12.0.0",
         "eslint-plugin-vitest": "0.3.22"
     }
 }
