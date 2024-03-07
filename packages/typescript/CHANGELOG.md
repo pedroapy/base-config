@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.5.1 (2024-03-07)
+
+### Bug Fixes
+
+-   build ([3136340](https://github.com/pedroapy/base-config/commit/3136340b48b3ba1b5b5c9341506d079d82561e11))
+
 # 1.5.0 (2024-03-01)
 
 ### Features
