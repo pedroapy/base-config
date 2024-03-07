@@ -1,6 +1,6 @@
 {
     "name": "@pedroapy/eslint-config-web-react",
-    "version": "1.5.1",
+    "version": "1.5.2",
     "description": "The @pedroapy shared config for ESLint for react web",
     "main": "index.js",
     "keywords": [

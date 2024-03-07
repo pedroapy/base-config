@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.5.2 (2024-03-07)
+
+### Bug Fixes
+
+-   eslint-node ([2c3fdd8](https://github.com/pedroapy/base-config/commit/2c3fdd8c998d1b525b9320a9bdbcafab2def125a))
+
 ## 1.5.1 (2024-03-07)
 
 ### Bug Fixes

@@ -1,7 +1,7 @@
 {
     "name": "@pedroapy/prettier",
     "description": "pedroapy prettier shared config",
-    "version": "1.5.1",
+    "version": "1.5.2",
     "main": "prettier.json",
     "author": "@pedroapy",
     "license": "MIT",
