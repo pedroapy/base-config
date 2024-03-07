@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.5.3 (2024-03-07)
+
+### Bug Fixes
+
+-   eslint-web-react ([f3dedf4](https://github.com/pedroapy/base-config/commit/f3dedf4b65d078dd022f93ee483d45714d48f726))
+
 ## 1.5.2 (2024-03-07)
 
 ### Bug Fixes
