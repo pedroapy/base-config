@@ -1,6 +1,6 @@
 {
     "name": "@pedroapy/eslint-config-node",
-    "version": "1.6.0",
+    "version": "1.7.0",
     "description": "The @pedroapy shared config for ESLint for node",
     "main": "index.js",
     "keywords": [
@@ -22,7 +22,7 @@
         "typescript": "^5.0.0"
     },
     "dependencies": {
-        "@pedroapy/eslint-config-base": "^1.6.0",
+        "@pedroapy/eslint-config-base": "^1.7.0",
         "@rushstack/eslint-patch": "1.7.2"
     }
 }
